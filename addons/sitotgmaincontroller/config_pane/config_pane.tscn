@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl1e8kda7nr4n"]
+
+[ext_resource type="Script" path="res://addons/sitotgmaincontroller/config_pane/config_pane.gd" id="1_8gcxn"]
+
+[node name="ConfigPane" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8gcxn")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
