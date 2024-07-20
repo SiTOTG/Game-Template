@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://jwwdjjx657wp"]
+
+[ext_resource type="Script" path="res://menus/settings/option_menu_peristent_item.gd" id="1_vfgyo"]
+
+[node name="OptionMenuPeristentItem" type="HBoxContainer"]
+script = ExtResource("1_vfgyo")
+config_name = "Test"
+
+[node name="OptionNameLabel" type="Label" parent="."]
+layout_mode = 2
+text = "Test"
