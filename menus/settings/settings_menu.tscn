@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fc82b2m55yie"]
+[gd_scene load_steps=5 format=3 uid="uid://cjaavxdc013x"]
 
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_vgf6x"]
 [ext_resource type="PackedScene" uid="uid://jwwdjjx657wp" path="res://menus/settings/option_menu_peristent_item.tscn" id="1_x0ppe"]
+[ext_resource type="Script" path="res://menus/settings/settings_tab.gd" id="2_hcdl1"]
 [ext_resource type="PackedScene" uid="uid://iqgbw87g5het" path="res://menus/settings/option_value_simple_text_control.tscn" id="3_8y078"]
 
 [node name="SettingsMenu" type="TabContainer"]
@@ -13,8 +14,10 @@ grow_vertical = 2
 current_tab = 0
 script = ExtResource("1_vgf6x")
 
-[node name="SettingsTab" type="Panel" parent="."]
+[node name="SettingsTab" type="Panel" parent="." node_paths=PackedStringArray("fields")]
 layout_mode = 2
+script = ExtResource("2_hcdl1")
+fields = [NodePath("MarginContainer/CenterContainer/SettingsOptions/OptionMenuPeristentItem")]
 metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="SettingsTab"]
@@ -43,15 +46,19 @@ config_name = "Name"
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="LineEdit" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/OptionMenuPeristentItem/OptionValueSimpleTextControl" index="0"]
-placeholder_text = "Name of the Character"
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsTab/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
 
-[node name="Apply" type="Button" parent="SettingsTab/MarginContainer"]
+[node name="Apply" type="Button" parent="SettingsTab/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 8
 text = "Apply"
 
-[connection signal="pressed" from="SettingsTab/MarginContainer/Apply" to="." method="_on_apply_pressed"]
+[node name="Button" type="Button" parent="SettingsTab/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Revert"
 
-[editable path="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/OptionMenuPeristentItem/OptionValueSimpleTextControl"]
+[connection signal="pressed" from="SettingsTab/MarginContainer/HBoxContainer/Apply" to="SettingsTab" method="apply"]
+[connection signal="pressed" from="SettingsTab/MarginContainer/HBoxContainer/Button" to="SettingsTab" method="load"]
