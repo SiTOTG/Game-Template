@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Settings" load_steps=5 format=3 uid="uid://o18cai1j4sb5"]
+
+[ext_resource type="Script" path="res://menus/settings/model/settings.gd" id="1_a5gpq"]
+[ext_resource type="Script" path="res://menus/settings/model/section.gd" id="2_w7q0g"]
+[ext_resource type="Resource" uid="uid://bkbxpmns5c4l0" path="res://menus/settings/data/sections/test.tres" id="3_171ni"]
+[ext_resource type="Resource" uid="uid://c23k6e5ftrtpf" path="res://menus/settings/data/sections/second.tres" id="4_uh0hk"]
+
+[resource]
+script = ExtResource("1_a5gpq")
+save_file_name = &"save.json"
+sections = Array[ExtResource("2_w7q0g")]([ExtResource("3_171ni"), ExtResource("4_uh0hk")])

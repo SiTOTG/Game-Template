@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Field" load_steps=3 format=3 uid="uid://crdmf4g4tu1md"]
+
+[ext_resource type="Script" path="res://menus/settings/model/field.gd" id="1_8dbnm"]
+[ext_resource type="Resource" uid="uid://sc55ma5mxv0n" path="res://menus/settings/data/sections/fields/values/country.tres" id="2_lsoti"]
+
+[resource]
+script = ExtResource("1_8dbnm")
+name = &"country"
+value = ExtResource("2_lsoti")

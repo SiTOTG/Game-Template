@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2463pkw1qqyk"]
+
+[ext_resource type="Script" path="res://menus/settings/model/test_settings.gd" id="1_28v3b"]
+[ext_resource type="Resource" uid="uid://o18cai1j4sb5" path="res://menus/settings/data/settings.tres" id="2_2m22h"]
+[ext_resource type="Resource" uid="uid://bkbxpmns5c4l0" path="res://menus/settings/data/sections/test.tres" id="3_0hbig"]
+[ext_resource type="Resource" uid="uid://crdmf4g4tu1md" path="res://menus/settings/data/sections/fields/country.tres" id="4_nmy6h"]
+[ext_resource type="Resource" uid="uid://x7n1rcxc84fu" path="res://menus/settings/data/sections/fields/values/name.tres" id="5_puo50"]
+
+[node name="TestSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28v3b")
+settings = ExtResource("2_2m22h")
+test_persist_section_target = ExtResource("3_0hbig")
+test_persist_field_target = ExtResource("4_nmy6h")
+test_persist_value_target = ExtResource("5_puo50")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CallPersistButton" type="OptionButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 5
+popup/item_0/text = "Call persist"
+popup/item_0/separator = true
+popup/item_1/text = "Section"
+popup/item_1/id = 1
+popup/item_2/text = "Field"
+popup/item_2/id = 2
+popup/item_3/text = "Value"
+popup/item_3/id = 3
+popup/item_4/text = "Settings"
+popup/item_4/id = 4
+
+[node name="LoadButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Load"
+
+[node name="CustomButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Custom"
+
+[connection signal="item_selected" from="VBoxContainer/CallPersistButton" to="." method="_on_call_persist_button_item_selected"]
+[connection signal="pressed" from="VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/CustomButton" to="." method="_on_custom_button_pressed"]

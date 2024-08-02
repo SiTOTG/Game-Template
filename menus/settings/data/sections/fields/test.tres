@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Field" load_steps=3 format=3 uid="uid://cfr7lpsnrft53"]
+
+[ext_resource type="Script" path="res://menus/settings/model/field.gd" id="1_60b7w"]
+[ext_resource type="Resource" uid="uid://x7n1rcxc84fu" path="res://menus/settings/data/sections/fields/values/name.tres" id="2_30w5a"]
+
+[resource]
+script = ExtResource("1_60b7w")
+name = &"Name"
+value = ExtResource("2_30w5a")

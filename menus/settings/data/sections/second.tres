@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Section" load_steps=4 format=3 uid="uid://c23k6e5ftrtpf"]
+
+[ext_resource type="Script" path="res://menus/settings/model/field.gd" id="1_saxti"]
+[ext_resource type="Resource" uid="uid://crdmf4g4tu1md" path="res://menus/settings/data/sections/fields/country.tres" id="2_ie5p2"]
+[ext_resource type="Script" path="res://menus/settings/model/section.gd" id="2_ji00b"]
+
+[resource]
+script = ExtResource("2_ji00b")
+name = &"second"
+fields = Array[ExtResource("1_saxti")]([ExtResource("2_ie5p2")])

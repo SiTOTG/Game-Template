@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="StringValue" load_steps=2 format=3 uid="uid://x7n1rcxc84fu"]
+
+[ext_resource type="Script" path="res://menus/settings/model/values/string_value.gd" id="1_i8ur5"]
+
+[resource]
+script = ExtResource("1_i8ur5")
+value = "V"
