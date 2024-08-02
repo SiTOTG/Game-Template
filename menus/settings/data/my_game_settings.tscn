@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxqjbdqd888jd"]
+
+[ext_resource type="PackedScene" uid="uid://d37gqmnycqrlb" path="res://menus/settings/model/Settings.tscn" id="1_lkrk0"]
+[ext_resource type="PackedScene" uid="uid://b17ppgrn5beeq" path="res://menus/settings/model/PersistentNode.tscn" id="2_1nxm3"]
+[ext_resource type="PackedScene" uid="uid://bbqjuac7ctdwy" path="res://menus/settings/model/StringValue.tscn" id="3_nmvro"]
+
+[node name="MyGameSettings" instance=ExtResource("1_lkrk0")]
+
+[node name="GameSettings" parent="." index="0" instance=ExtResource("2_1nxm3")]
+field_name = "Game Settings"
+
+[node name="Difficulty" parent="GameSettings" index="0" instance=ExtResource("2_1nxm3")]
+field_name = "Difficulty"
+
+[node name="DifficultyValue" parent="GameSettings/Difficulty" index="0" instance=ExtResource("3_nmvro")]
+process_mode = 0
+value = "Hard"
+field_name = "Difficulty"
+
+[node name="SoundSettings" parent="." index="1" instance=ExtResource("2_1nxm3")]
+field_name = "Sound"
+
+[node name="Volume" parent="SoundSettings" index="0" instance=ExtResource("2_1nxm3")]
+field_name = "Volume"
+
+[node name="VolumeValue" parent="SoundSettings/Volume" index="0" instance=ExtResource("3_nmvro")]
+process_mode = 0
+value = "12db"
+field_name = "Volume"

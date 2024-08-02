@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d37gqmnycqrlb"]
+
+[ext_resource type="Script" path="res://menus/settings/model/settings.gd" id="1_eq5a5"]
+
+[node name="Settings" type="Node"]
+script = ExtResource("1_eq5a5")

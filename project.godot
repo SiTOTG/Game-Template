@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ConfigGlobal="*res://menus/config_global.gd"
+MyGameSettings="*res://menus/settings/data/my_game_settings.tscn"
 
 [editor_plugins]
 

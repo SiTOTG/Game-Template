@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbqjuac7ctdwy"]
+
+[ext_resource type="PackedScene" uid="uid://b17ppgrn5beeq" path="res://menus/settings/model/PersistentNode.tscn" id="1_v8hmb"]
+[ext_resource type="Script" path="res://menus/settings/model/string_value.gd" id="2_es00h"]
+
+[node name="StringValue" instance=ExtResource("1_v8hmb")]
+script = ExtResource("2_es00h")
+value = ""
