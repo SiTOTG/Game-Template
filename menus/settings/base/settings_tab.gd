@@ -10,7 +10,7 @@ func apply():
 	var persist_value := {}
 	for field in fields:
 		var field_value = field.get_persist_value()
-		persist_value.merge(field_value, true)
+		Helper.merge_recurssively(persist_value, field_value)
 
 	ConfigGlobal.save_values(persist_value)
 

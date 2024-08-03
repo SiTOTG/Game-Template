@@ -16,7 +16,7 @@ func get_config_json() -> Dictionary:
 
 func save_values(config: Dictionary) -> void:
 	var current = get_config_json()
-	current.merge(config, true)
+	Helper.merge_recurssively(current, config)
 	var file = FileAccess.open(config_file_name, FileAccess.WRITE)
 	file.store_string(JSON.stringify(current))
 	print(JSON.stringify(current, "\t"))

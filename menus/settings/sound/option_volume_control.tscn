@@ -21,4 +21,6 @@ grow_vertical = 2
 min_value = -20.0
 max_value = 4.0
 
+[node name="AudioFeedback" type="AudioStreamPlayer" parent="."]
+
 [connection signal="value_changed" from="VolumeSlider" to="." method="_on_volume_slider_value_changed"]

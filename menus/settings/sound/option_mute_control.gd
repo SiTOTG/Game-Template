@@ -5,12 +5,10 @@ extends "res://menus/settings/base/option_value_control.gd"
 @onready var bus_index := AudioServer.get_bus_index(soundbus)
 
 func get_value() -> String:
-	print("toggled")
 	return str(%MuteCheckButton.button_pressed)
 	
 
 func load_value(_value):
-	print("toggled")
 	%MuteCheckButton.button_pressed = _value == "true"
 
 
