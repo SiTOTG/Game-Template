@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ConfigGlobal="*res://menus/config_global.gd"
+Debug="*res://debug/debug.tscn"
 
 [editor_plugins]
 
