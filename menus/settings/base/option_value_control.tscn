@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://o5x63c5knnxw"]
 
-[ext_resource type="Script" path="res://menus/settings/option_value_control.gd" id="1_jmy13"]
+[ext_resource type="Script" path="res://menus/settings/base/option_value_control.gd" id="1_jmy13"]
 
 [node name="OptionValueControl" type="LineEdit"]
 script = ExtResource("1_jmy13")

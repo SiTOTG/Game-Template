@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://jwwdjjx657wp"]
 
-[ext_resource type="Script" path="res://menus/settings/option_menu_peristent_item.gd" id="1_vfgyo"]
+[ext_resource type="Script" path="res://menus/settings/base/option_menu_peristent_item.gd" id="1_vfgyo"]
 
 [node name="OptionMenuPeristentItem" type="HBoxContainer"]
 script = ExtResource("1_vfgyo")

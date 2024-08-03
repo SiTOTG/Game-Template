@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjaavxdc013x"]
 
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_vgf6x"]
-[ext_resource type="PackedScene" uid="uid://jwwdjjx657wp" path="res://menus/settings/option_menu_peristent_item.tscn" id="1_x0ppe"]
-[ext_resource type="Script" path="res://menus/settings/settings_tab.gd" id="2_hcdl1"]
-[ext_resource type="PackedScene" uid="uid://iqgbw87g5het" path="res://menus/settings/option_value_simple_text_control.tscn" id="3_8y078"]
+[ext_resource type="PackedScene" uid="uid://jwwdjjx657wp" path="res://menus/settings/base/option_menu_peristent_item.tscn" id="1_x0ppe"]
+[ext_resource type="PackedScene" uid="uid://csgpc8a6vrgcm" path="res://menus/settings/base/settings_tab.tscn" id="2_y7wky"]
+[ext_resource type="PackedScene" uid="uid://887tvyfsdpat" path="res://menus/settings/sound/OptionVolumeControl.tscn" id="4_a260t"]
 
 [node name="SettingsMenu" type="TabContainer"]
 anchors_preset = 15
@@ -14,51 +14,16 @@ grow_vertical = 2
 current_tab = 0
 script = ExtResource("1_vgf6x")
 
-[node name="SettingsTab" type="Panel" parent="." node_paths=PackedStringArray("fields")]
+[node name="SettingsTab" parent="." node_paths=PackedStringArray("fields") instance=ExtResource("2_y7wky")]
 layout_mode = 2
-script = ExtResource("2_hcdl1")
 fields = [NodePath("MarginContainer/CenterContainer/SettingsOptions/OptionMenuPeristentItem")]
-metadata/_tab_index = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="SettingsTab"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="CenterContainer" type="CenterContainer" parent="SettingsTab/MarginContainer"]
+[node name="OptionMenuPeristentItem" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions" index="0" instance=ExtResource("1_x0ppe")]
 layout_mode = 2
-size_flags_vertical = 0
+section = "Sound"
+config_name = "Volume"
 
-[node name="SettingsOptions" type="VBoxContainer" parent="SettingsTab/MarginContainer/CenterContainer"]
-unique_name_in_owner = true
+[node name="OptionVolumeControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/OptionMenuPeristentItem" instance=ExtResource("4_a260t")]
 layout_mode = 2
 
-[node name="OptionMenuPeristentItem" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions" instance=ExtResource("1_x0ppe")]
-layout_mode = 2
-config_name = "Name"
-
-[node name="OptionValueSimpleTextControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/OptionMenuPeristentItem" instance=ExtResource("3_8y078")]
-layout_mode = 2
-size_flags_vertical = 6
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsTab/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 8
-alignment = 1
-
-[node name="Apply" type="Button" parent="SettingsTab/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Apply"
-
-[node name="Button" type="Button" parent="SettingsTab/MarginContainer/HBoxContainer"]
-layout_mode = 2
-text = "Revert"
-
-[connection signal="pressed" from="SettingsTab/MarginContainer/HBoxContainer/Apply" to="SettingsTab" method="apply"]
-[connection signal="pressed" from="SettingsTab/MarginContainer/HBoxContainer/Button" to="SettingsTab" method="load"]
+[editable path="SettingsTab"]
