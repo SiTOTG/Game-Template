@@ -17,6 +17,6 @@ func _ready() -> void:
 func _get_configuration_warnings() -> PackedStringArray:
 	var warnings = []
 	var parent = get_parent()
-	if not parent is OptionsMenuPeristentItem:
-		warnings.append("This should be a child of OptionsMenuPeristentItem")
+	if not parent is OptionsMenuPersistentItem:
+		warnings.append("This should be a child of OptionsMenuPersistentItem")
 	return warnings
