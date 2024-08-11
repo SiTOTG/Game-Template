@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://iqgbw87g5het"]
 
-[ext_resource type="Script" path="res://menus/settings/option_value_simple_text_control.gd" id="1_rudnq"]
+[ext_resource type="Script" path="res://menus/settings/base/option_value_simple_text_control.gd" id="1_rudnq"]
 
 [node name="OptionValueSimpleTextControl" type="Control"]
 custom_minimum_size = Vector2(250, 0)
@@ -20,3 +20,4 @@ offset_top = -15.5
 offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
+placeholder_text = "Enter value here"

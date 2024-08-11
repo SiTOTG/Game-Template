@@ -1,6 +1,6 @@
 extends Panel
 
-@export var fields: Array[OptionsMenuPeristentItem] = []
+@export var fields: Array[OptionsMenuPersistentItem] = []
 
 func _ready() -> void:
 	#for field in fields
@@ -9,7 +9,8 @@ func _ready() -> void:
 func apply():
 	var persist_value := {}
 	for field in fields:
-		persist_value.merge(field.get_persist_value(), true)
+		var field_value = field.get_persist_value()
+		Helper.merge_recurssively(persist_value, field_value)
 
 	ConfigGlobal.save_values(persist_value)
 

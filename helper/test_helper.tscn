@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cipfaq1a1nmrw"]
+
+[ext_resource type="Script" path="res://helper/test_helper.gd" id="1_x8pvb"]
+
+[node name="TestHelper" type="Node"]
+script = ExtResource("1_x8pvb")

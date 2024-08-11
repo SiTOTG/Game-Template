@@ -1,5 +1,5 @@
 @tool
-class_name OptionsMenuPeristentItem
+class_name OptionsMenuPersistentItem
 extends HBoxContainer
 
 @export var section: String = "CustomSection"
