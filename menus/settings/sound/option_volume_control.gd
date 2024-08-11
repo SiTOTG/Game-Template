@@ -18,5 +18,5 @@ func load_value(_value):
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(bus_index, %VolumeSlider.value)
-	if feedback_stream:
+	if %VolumeSlider.has_focus() and feedback_stream:
 		$AudioFeedback.play()

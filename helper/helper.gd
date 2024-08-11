@@ -26,4 +26,3 @@ static func merge_recurssively(dict1: Dictionary, dict2: Dictionary):
 			else:
 				# Not a dictionary, override
 				dict1[key] = value
-			

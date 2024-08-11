@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjaavxdc013x"]
 
 [ext_resource type="Script" path="res://menus/settings/settings_menu.gd" id="1_vgf6x"]
-[ext_resource type="PackedScene" uid="uid://jwwdjjx657wp" path="res://menus/settings/base/option_menu_peristent_item.tscn" id="1_x0ppe"]
+[ext_resource type="PackedScene" uid="uid://jwwdjjx657wp" path="res://menus/settings/base/option_menu_persistent_item.tscn" id="1_x0ppe"]
 [ext_resource type="PackedScene" uid="uid://csgpc8a6vrgcm" path="res://menus/settings/base/settings_tab.tscn" id="2_y7wky"]
 [ext_resource type="PackedScene" uid="uid://887tvyfsdpat" path="res://menus/settings/sound/option_volume_control.tscn" id="4_a260t"]
 [ext_resource type="PackedScene" uid="uid://8wmk8a451fhu" path="res://menus/settings/sound/option_sound_device_control.tscn" id="4_kvtgs"]
@@ -18,68 +18,68 @@ grow_vertical = 2
 current_tab = 0
 script = ExtResource("1_vgf6x")
 
-[node name="SettingsTab" parent="." node_paths=PackedStringArray("fields") instance=ExtResource("2_y7wky")]
+[node name="Audio" parent="." node_paths=PackedStringArray("fields") instance=ExtResource("2_y7wky")]
 layout_mode = 2
 fields = [NodePath("MarginContainer/CenterContainer/SettingsOptions/MasterVolume"), NodePath("MarginContainer/CenterContainer/SettingsOptions/BGMVolume"), NodePath("MarginContainer/CenterContainer/SettingsOptions/SFXVolume"), NodePath("MarginContainer/CenterContainer/SettingsOptions/SpeechVolume"), NodePath("MarginContainer/CenterContainer/SettingsOptions/SoundDevice")]
 
-[node name="SoundDevice" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions" index="0" instance=ExtResource("1_x0ppe")]
+[node name="SoundDevice" parent="Audio/MarginContainer/CenterContainer/SettingsOptions" index="0" instance=ExtResource("1_x0ppe")]
 layout_mode = 2
 section = "Sound"
 config_name = "Output Device"
 
-[node name="OptionSoundDeviceControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/SoundDevice" instance=ExtResource("4_kvtgs")]
+[node name="OptionSoundDeviceControl" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/SoundDevice" instance=ExtResource("4_kvtgs")]
 layout_mode = 2
 
-[node name="MasterVolume" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions" index="1" instance=ExtResource("1_x0ppe")]
+[node name="MasterVolume" parent="Audio/MarginContainer/CenterContainer/SettingsOptions" index="1" instance=ExtResource("1_x0ppe")]
 layout_mode = 2
 section = "Sound"
 config_name = "Volume Master"
 
-[node name="OptionVolumeControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/MasterVolume" instance=ExtResource("4_a260t")]
+[node name="OptionVolumeControl" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/MasterVolume" instance=ExtResource("4_a260t")]
 layout_mode = 2
 
-[node name="OptionMuteControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/MasterVolume" instance=ExtResource("5_e1tuo")]
+[node name="OptionMuteControl" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/MasterVolume" instance=ExtResource("5_e1tuo")]
 layout_mode = 2
 
-[node name="BGMVolume" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions" index="2" instance=ExtResource("1_x0ppe")]
+[node name="BGMVolume" parent="Audio/MarginContainer/CenterContainer/SettingsOptions" index="2" instance=ExtResource("1_x0ppe")]
 layout_mode = 2
 section = "Sound"
 config_name = "Volume BGM"
 
-[node name="OptionVolumeControl2" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/BGMVolume" instance=ExtResource("4_a260t")]
+[node name="OptionVolumeControl2" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/BGMVolume" instance=ExtResource("4_a260t")]
 layout_mode = 2
 soundbus = "BGM"
 
-[node name="OptionMuteControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/BGMVolume" instance=ExtResource("5_e1tuo")]
+[node name="OptionMuteControl" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/BGMVolume" instance=ExtResource("5_e1tuo")]
 layout_mode = 2
 soundbus = "BGM"
 
-[node name="SFXVolume" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions" index="3" instance=ExtResource("1_x0ppe")]
+[node name="SFXVolume" parent="Audio/MarginContainer/CenterContainer/SettingsOptions" index="3" instance=ExtResource("1_x0ppe")]
 layout_mode = 2
 section = "Sound"
 config_name = "Volume SFX"
 
-[node name="OptionVolumeControl3" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/SFXVolume" instance=ExtResource("4_a260t")]
+[node name="OptionVolumeControl3" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/SFXVolume" instance=ExtResource("4_a260t")]
 layout_mode = 2
 feedback_stream = ExtResource("7_ajl5k")
 soundbus = "SFX"
 
-[node name="OptionMuteControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/SFXVolume" instance=ExtResource("5_e1tuo")]
+[node name="OptionMuteControl" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/SFXVolume" instance=ExtResource("5_e1tuo")]
 layout_mode = 2
 soundbus = "SFX"
 
-[node name="SpeechVolume" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions" index="4" instance=ExtResource("1_x0ppe")]
+[node name="SpeechVolume" parent="Audio/MarginContainer/CenterContainer/SettingsOptions" index="4" instance=ExtResource("1_x0ppe")]
 layout_mode = 2
 section = "Sound"
 config_name = "Volume Voz"
 
-[node name="OptionVolumeControl4" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/SpeechVolume" instance=ExtResource("4_a260t")]
+[node name="OptionVolumeControl4" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/SpeechVolume" instance=ExtResource("4_a260t")]
 layout_mode = 2
 feedback_stream = ExtResource("8_4j53n")
 soundbus = "Speech"
 
-[node name="OptionMuteControl" parent="SettingsTab/MarginContainer/CenterContainer/SettingsOptions/SpeechVolume" instance=ExtResource("5_e1tuo")]
+[node name="OptionMuteControl" parent="Audio/MarginContainer/CenterContainer/SettingsOptions/SpeechVolume" instance=ExtResource("5_e1tuo")]
 layout_mode = 2
 soundbus = "Speech"
 
-[editable path="SettingsTab"]
+[editable path="Audio"]
